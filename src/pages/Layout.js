@@ -1,21 +1,11 @@
-import { Link, Stack, Divider } from "@chakra-ui/react";
-import { Outlet, Link as ReactRouterLink } from "react-router-dom";
+import { Stack, Divider } from "@chakra-ui/react";
+import { Outlet } from "react-router-dom";
+import NavigationBar from "../components/shared/NavigationBar";
 
 export function Layout() {
   return (
     <Stack>
-      <Stack direction="row" spacing={10}>
-        <Link as={ReactRouterLink} to="/signup">
-          회원가입
-        </Link>
-        <Link as={ReactRouterLink} to="/signin">
-          로그인
-        </Link>
-        <Link as={ReactRouterLink} to="/todo">
-          투두
-        </Link>
-      </Stack>
-
+      <NavigationBar />
       <Divider />
       <Outlet />
     </Stack>

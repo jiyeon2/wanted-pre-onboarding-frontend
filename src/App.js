@@ -5,6 +5,7 @@ import { Layout } from "./pages/Layout";
 import { Signin } from "./pages/Signin";
 import { Signup } from "./pages/Signup";
 import { Todo } from "./pages/Todo";
+import { Home } from "./pages/Home";
 import RequireToken from "./components/shared/RequireToken";
 import CheckHasToken from "./components/shared/CheckHasToken";
 
@@ -13,7 +14,7 @@ function App() {
     <Container className="App" py={10}>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<p>사전과제 투두앱 🦛</p>} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/signin"
             element={
