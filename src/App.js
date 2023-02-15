@@ -13,6 +13,7 @@ function App() {
     <Container className="App" py={10}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/" element={<p>사전과제 투두앱 🦛</p>} />
           <Route
             path="/signin"
             element={
