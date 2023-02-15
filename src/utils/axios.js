@@ -52,3 +52,14 @@ export function updateTodo(todoId, body, onSuccess, onError) {
     .then(onSuccess)
     .catch(onError);
 }
+
+export function deleteTodo(todoId, onSuccess, onError) {
+  return axiosInstance
+    .delete(`/todos/${todoId}`, {
+      headers: {
+        Authorization: `Bearer ${getJWT()}`,
+      },
+    })
+    .then(onSuccess)
+    .catch(onError);
+}
