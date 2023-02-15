@@ -5,7 +5,7 @@ import { useUserFormValidation } from "../../hooks/useUserFormValidation";
 import FormInput from "../shared/FormInput";
 
 function UserForm(props) {
-  const { type } = props; // form type은 signin , signup
+  const { type, formSubmitHandler } = props; // form type은 signin , signup
   const [formState, setFormState] = useState({
     email: "",
     password: "",
@@ -18,8 +18,15 @@ function UserForm(props) {
   const { isAllValid, errors } = useUserFormValidation(formState);
   const buttonLabel = useUserFormButtonLabel(type);
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (!isAllValid) return;
+
+    formSubmitHandler(formState);
+  };
+
   return (
-    <form>
+    <form onSubmit={handleFormSubmit}>
       <Stack spacing={4}>
         <FormInput
           label="이메일"
@@ -46,6 +53,7 @@ function UserForm(props) {
         <Button
           data-test-id={buttonLabel["data-test-id"]}
           isDisabled={!isAllValid}
+          type="submit"
         >
           {buttonLabel.label}
         </Button>
