@@ -7,11 +7,11 @@ export function useUserFormValidation(formState) {
   const errors = { email: null, password: null };
   const isValid = { email: true, password: true };
 
-  if (!formState.email.includes("@")) {
+  if (!!formState.email && !formState.email.includes("@")) {
     errors.email = errorMessage.email;
     isValid.email = false;
   }
-  if (formState.password.length < 8) {
+  if (!!formState.password && formState.password.length < 8) {
     errors.password = errorMessage.password;
     isValid.password = false;
   }

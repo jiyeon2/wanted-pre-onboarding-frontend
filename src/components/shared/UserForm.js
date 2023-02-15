@@ -48,7 +48,7 @@ function UserForm(props) {
             value: formState.password,
             onChange: onChangeHandler,
           }}
-          error={errors.email}
+          error={errors.password}
         />
         <Button
           data-test-id={buttonLabel["data-test-id"]}
