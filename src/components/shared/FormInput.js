@@ -9,7 +9,7 @@ function FormInput(props) {
   const { label, inputProps, error } = props;
   return (
     <FormControl isInvalid={error}>
-      <FormLabel>{label}</FormLabel>
+      {label && <FormLabel>{label}</FormLabel>}
       <Input {...inputProps} />
       {error && <FormErrorMessage>{error}</FormErrorMessage>}
     </FormControl>

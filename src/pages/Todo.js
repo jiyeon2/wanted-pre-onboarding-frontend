@@ -29,15 +29,19 @@ export function Todo() {
       <Heading as="h2">투두 페이지</Heading>
       <Stack>
         <AddTodoSection onSuccessHandler={loadTodoList} />
-        {!todos.length && <p>투두가 없습니다</p>}
-        {todos.length > 0 &&
-          todos.map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todoData={todo}
-              loadTodoList={loadTodoList}
-            />
-          ))}
+        {!todos.length ? (
+          <p>투두가 없습니다</p>
+        ) : (
+          <Stack as="ul" spacing={2}>
+            {todos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                todoData={todo}
+                loadTodoList={loadTodoList}
+              />
+            ))}
+          </Stack>
+        )}
       </Stack>
     </Stack>
   );
