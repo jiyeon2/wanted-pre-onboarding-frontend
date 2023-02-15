@@ -1,7 +1,8 @@
-import { Heading, Stack, Button } from "@chakra-ui/react";
+import { Heading, Stack } from "@chakra-ui/react";
 import { useEffect, useState, useCallback } from "react";
 import AddTodoSection from "../components/todo/AddTodoSection";
 import { loadTodos } from "../utils/axios";
+import { TodoItem } from "../components/todo/TodoItem";
 
 export function Todo() {
   const [todos, setTodos] = useState([]);
@@ -30,35 +31,14 @@ export function Todo() {
         <AddTodoSection onSuccessHandler={loadTodoList} />
         {!todos.length && <p>투두가 없습니다</p>}
         {todos.length > 0 &&
-          todos.map((todo) => <TodoItem key={todo.id} todoData={todo} />)}
+          todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todoData={todo}
+              loadTodoList={loadTodoList}
+            />
+          ))}
       </Stack>
     </Stack>
-  );
-}
-
-function TodoItem(props) {
-  const { todoData } = props;
-  const { id, todo, isCompleted, userId } = todoData;
-
-  const handleCompletedChange = (e) => {
-    console.log(e);
-  };
-  return (
-    <li>
-      <label>
-        <input
-          type="checkbox"
-          checked={isCompleted}
-          onChange={handleCompletedChange}
-        />
-        <span>{todo}</span>
-      </label>
-      <Button data-testid="modify-button" size="sm">
-        수정
-      </Button>
-      <Button data-testid="delete-button" size="sm">
-        삭제
-      </Button>
-    </li>
   );
 }

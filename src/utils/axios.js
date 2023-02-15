@@ -41,3 +41,14 @@ export function createTodo(body, onSuccess, onError) {
     .then(onSuccess)
     .catch(onError);
 }
+
+export function updateTodo(todoId, body, onSuccess, onError) {
+  return axiosInstance
+    .put(`/todos/${todoId}`, body, {
+      headers: {
+        Authorization: `Bearer ${getJWT()}`,
+      },
+    })
+    .then(onSuccess)
+    .catch(onError);
+}
