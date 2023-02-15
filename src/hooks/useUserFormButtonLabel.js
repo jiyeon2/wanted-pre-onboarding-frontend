@@ -1,6 +1,6 @@
 const values = {
-  signin: { label: "로그인", [`data-test-id`]: "signin-button" },
-  signup: { label: "회원가입", [`data-test-id`]: "signup-button" },
+  signin: { label: "로그인", [`data-testid`]: "signin-button" },
+  signup: { label: "회원가입", [`data-testid`]: "signup-button" },
 };
 
 export function useUserFormButtonLabel(type) {

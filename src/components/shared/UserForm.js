@@ -32,7 +32,7 @@ function UserForm(props) {
           label="이메일"
           inputProps={{
             type: "email",
-            [`data-test-id`]: "email-input",
+            [`data-testid`]: "email-input",
             name: "email",
             value: formState.email,
             onChange: onChangeHandler,
@@ -43,7 +43,7 @@ function UserForm(props) {
           label="비밀번호"
           inputProps={{
             type: "password",
-            [`data-test-id`]: "password-input",
+            [`data-testid`]: "password-input",
             name: "password",
             value: formState.password,
             onChange: onChangeHandler,
@@ -51,7 +51,7 @@ function UserForm(props) {
           error={errors.password}
         />
         <Button
-          data-test-id={buttonLabel["data-test-id"]}
+          data-testid={buttonLabel["data-testid"]}
           isDisabled={!isAllValid}
           type="submit"
         >
