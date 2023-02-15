@@ -1,6 +1,7 @@
 # 원티드 프리온보딩 프론트엔드 - 선발 과제
 
 투두 앱 만들기
+![스크린샷, 2023-02-15 18-19-50 1](https://user-images.githubusercontent.com/18395475/218989852-4e546feb-7079-4c6d-b826-ff4bf2b84efa.jpg)
 
 ## 데모
 
