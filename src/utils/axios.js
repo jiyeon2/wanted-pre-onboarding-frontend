@@ -11,3 +11,10 @@ export function requestSignup(body, onSuccess, onError) {
     .then((res) => onSuccess(res, body))
     .catch(onError);
 }
+
+export function requestLogin(body, onSuccess, onError) {
+  return axiosInstance
+    .post("/auth/signin", body)
+    .then((res) => onSuccess(res, body))
+    .catch(onError);
+}
