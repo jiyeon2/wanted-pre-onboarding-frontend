@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "@chakra-ui/react";
+import { Routes, Route } from "react-router-dom";
+import { NotFound } from "./pages/NotFound";
+import { Layout } from "./pages/Layout";
+import { Signin } from "./pages/Signin";
+import { Signup } from "./pages/Signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="App" py={10}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="signin" element={<Signin />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </Container>
   );
 }
 
