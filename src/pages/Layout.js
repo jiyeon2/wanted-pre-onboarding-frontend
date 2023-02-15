@@ -11,6 +11,9 @@ export function Layout() {
         <Link as={ReactRouterLink} to="/signin">
           로그인
         </Link>
+        <Link as={ReactRouterLink} to="/todo">
+          투두
+        </Link>
       </Stack>
 
       <Divider />

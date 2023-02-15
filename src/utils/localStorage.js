@@ -4,4 +4,6 @@ export function saveJWT(token) {
   window.localStorage.setItem(JWT_KEY, token);
 }
 
-export function getJWT() {}
+export function getJWT() {
+  return window.localStorage.getItem(JWT_KEY);
+}

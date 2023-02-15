@@ -24,7 +24,6 @@ export default function SignupForm() {
   const onError = (error) => {
     toast({
       title: signupMessages.onError,
-      description: error,
       status: "error",
     });
     console.error(error);

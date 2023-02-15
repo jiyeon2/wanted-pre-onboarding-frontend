@@ -22,13 +22,11 @@ export default function LoginForm() {
 
     saveJWT(res.data.access_token);
 
-    // TODO : todo 페이지 생성
-    // navigate("/todo");
+    navigate("/todo");
   };
   const onError = (error) => {
     toast({
       title: loginMessages.onError,
-      description: error,
       status: "error",
     });
     console.error(error);
